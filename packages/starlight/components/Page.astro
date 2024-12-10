@@ -50,7 +50,7 @@ const pagefindEnabled =
 			padding-bottom: 3vh;
 		}
 		@media (min-width: 50em) {
-			[data-has-sidebar] {
+			:global(:root[data-has-sidebar]) {
 				--sl-content-inline-start: var(--sl-sidebar-width);
 			}
 		}
