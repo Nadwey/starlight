@@ -31,6 +31,11 @@ const pagefindEnabled =
 	Astro.props.entry.slug !== '404' &&
 	!Astro.props.entry.slug.endsWith('/404') &&
 	Astro.props.entry.data.pagefind !== false;
+
+const dataAttributes: DOMStringMap = { 'data-theme': 'dark' };
+if (Boolean(Astro.props.toc)) dataAttributes['data-has-toc'] = '';
+if (Astro.props.hasSidebar) dataAttributes['data-has-sidebar'] = '';
+if (Boolean(Astro.props.entry.data.hero)) dataAttributes['data-has-hero'] = '';
 ---
 
 <Layout {...Astro.props}>
