@@ -63,7 +63,14 @@ test('parses valid config successfully', () => {
 		  "isUsingBuiltInDefaultLocale": true,
 		  "lastUpdated": false,
 		  "locales": undefined,
-		  "pagefind": true,
+		  "pagefind": {
+		    "ranking": {
+		      "pageLength": 0.1,
+		      "termFrequency": 0.1,
+		      "termSaturation": 2,
+		      "termSimilarity": 9,
+		    },
+		  },
 		  "pagination": true,
 		  "prerender": true,
 		  "tableOfContents": {
@@ -114,7 +121,7 @@ test('errors with bad social icon config', () => {
 		"[AstroUserError]:
 			Invalid config passed to starlight integration
 		Hint:
-			**social.unknown**: Invalid enum value. Expected 'twitter' | 'mastodon' | 'github' | 'gitlab' | 'bitbucket' | 'discord' | 'gitter' | 'codeberg' | 'codePen' | 'youtube' | 'threads' | 'linkedin' | 'twitch' | 'azureDevOps' | 'microsoftTeams' | 'instagram' | 'stackOverflow' | 'x.com' | 'telegram' | 'rss' | 'facebook' | 'email' | 'reddit' | 'patreon' | 'signal' | 'slack' | 'matrix' | 'openCollective' | 'hackerOne' | 'blueSky' | 'discourse' | 'zulip' | 'pinterest' | 'tiktok' | 'nostr' | 'backstage' | 'farcaster', received 'unknown'
+			**social.unknown**: Invalid enum value. Expected 'twitter' | 'mastodon' | 'github' | 'gitlab' | 'bitbucket' | 'discord' | 'gitter' | 'codeberg' | 'codePen' | 'youtube' | 'threads' | 'linkedin' | 'twitch' | 'azureDevOps' | 'microsoftTeams' | 'instagram' | 'stackOverflow' | 'x.com' | 'telegram' | 'rss' | 'facebook' | 'email' | 'reddit' | 'patreon' | 'signal' | 'slack' | 'matrix' | 'openCollective' | 'hackerOne' | 'blueSky' | 'discourse' | 'zulip' | 'pinterest' | 'tiktok' | 'nostr' | 'backstage' | 'farcaster' | 'confluence' | 'jira' | 'storybook', received 'unknown'
 			**social.unknown**: Invalid url"
 	`
 	);

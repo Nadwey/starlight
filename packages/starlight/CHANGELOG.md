@@ -1,5 +1,67 @@
 # @astrojs/starlight
 
+## 0.31.0
+
+### Minor Changes
+
+- [#2777](https://github.com/withastro/starlight/pull/2777) [`88f4214`](https://github.com/withastro/starlight/commit/88f42145888f3a04f20898fcb700c1e65be48bb2) Thanks [@hippotastic](https://github.com/hippotastic)! - Updates `astro-expressive-code` dependency to the latest version (0.40).
+
+  This includes an update to the latest Shiki version (1.26.1), providing access to all current Shiki themes and syntax highlighting languages, and adding the config options `shiki.engine`, `shiki.bundledLangs`, `shiki.langAlias` and `removeUnusedThemes`. It also adds new style variants to the optional collapsible sections plugin.
+
+  See the [Expressive Code release notes](https://expressive-code.com/releases/#0400) for full details.
+
+- [#2736](https://github.com/withastro/starlight/pull/2736) [`29a885b`](https://github.com/withastro/starlight/commit/29a885be43f29150d6abd905f3ef7e1dccb99c98) Thanks [@delucis](https://github.com/delucis)! - ⚠️ **BREAKING CHANGE:** The minimum supported version of Astro is now 5.1.5
+
+  Please update Astro and Starlight together:
+
+  ```sh
+  npx @astrojs/upgrade
+  ```
+
+- [#2728](https://github.com/withastro/starlight/pull/2728) [`e187383`](https://github.com/withastro/starlight/commit/e1873834d4a4328084a9ac056a089ee5b8f13103) Thanks [@delucis](https://github.com/delucis)! - Updates minimum Pagefind dependency to v1.3.0, sets new defaults for Pagefind’s ranking options, and adds support for manually configuring the ranking options
+
+  The new ranking option defaults have been evaluated against Starlight’s own docs to improve the quality of search results. See [“Customize Pagefind's result ranking”](https://pagefind.app/docs/ranking/) for more details about how they work.
+
+- [#157](https://github.com/withastro/starlight/pull/157) [`23bf960`](https://github.com/withastro/starlight/commit/23bf960aed36445600b6ccecb2138a5b461e2929) Thanks [@tony-sull](https://github.com/tony-sull)! - Adds a print stylesheet to improve the appearance of Starlight docs pages when printed
+
+- [#2728](https://github.com/withastro/starlight/pull/2728) [`e187383`](https://github.com/withastro/starlight/commit/e1873834d4a4328084a9ac056a089ee5b8f13103) Thanks [@delucis](https://github.com/delucis)! - Fixes Pagefind logging to respect the Astro log level. When using Astro’s `--verbose` or `--silent` CLI flags, these are now respected by Pagefind as well.
+
+### Patch Changes
+
+- [#2792](https://github.com/withastro/starlight/pull/2792) [`412effb`](https://github.com/withastro/starlight/commit/412effb5a63c6026ea4faa0d09bcbd4a3c9fad4d) Thanks [@dhruvkb](https://github.com/dhruvkb)! - Uses semantic `var(--sl-color-hairline)` for the page sidebar border instead of `var(--sl-color-gray-6)`. This is visually the same as previously but makes it easier to override the hairline color consistently across a site.
+
+- [#2736](https://github.com/withastro/starlight/pull/2736) [`29a885b`](https://github.com/withastro/starlight/commit/29a885be43f29150d6abd905f3ef7e1dccb99c98) Thanks [@delucis](https://github.com/delucis)! - Updates internal dependencies `@astrojs/sitemap` and `@astrojs/mdx` to the latest versions
+
+- [#2782](https://github.com/withastro/starlight/pull/2782) [`d9d415b`](https://github.com/withastro/starlight/commit/d9d415b4558c7995319299e9c9e1520c87c3078e) Thanks [@delucis](https://github.com/delucis)! - Fixes a documentation link in the JSDoc comment for the `StarlightExpressiveCodeOptions` type
+
+- [#2708](https://github.com/withastro/starlight/pull/2708) [`442c819`](https://github.com/withastro/starlight/commit/442c8194dbcbe58e155d4c1f8d897a04605666e5) Thanks [@delucis](https://github.com/delucis)! - Fixes colour contrast correction in code blocks
+
+## 0.30.6
+
+### Patch Changes
+
+- [#2722](https://github.com/withastro/starlight/pull/2722) [`0b206d3`](https://github.com/withastro/starlight/commit/0b206d3a23f0876146dc17f5e507984362917696) Thanks [@techfg](https://github.com/techfg)! - Fixes display of long site title on mobile
+
+- [#2762](https://github.com/withastro/starlight/pull/2762) [`7ab1576`](https://github.com/withastro/starlight/commit/7ab157639da62fdc6b444b0280ad4c9d5ee4872f) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Prevents the header title from being translated by automatic translation systems.
+
+## 0.30.5
+
+### Patch Changes
+
+- [#2757](https://github.com/withastro/starlight/pull/2757) [`e7b0e74`](https://github.com/withastro/starlight/commit/e7b0e742dffb7c4a8f4619297e4bd6e5a8015edb) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Fixes a UI string translation issue for languages with a region subtag.
+
+- [#2760](https://github.com/withastro/starlight/pull/2760) [`aec9edd`](https://github.com/withastro/starlight/commit/aec9edd14827a45fbc92d82db83dd713571e0c2d) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Adds 5 new icons: `left-caret`, `up-arrow`, `down-arrow`, `download`, and `cloud-download`.
+
+## 0.30.4
+
+### Patch Changes
+
+- [#2747](https://github.com/withastro/starlight/pull/2747) [`474c27e`](https://github.com/withastro/starlight/commit/474c27e28d79794ac78d36e3384f0c0da6f2dfed) Thanks [@bbag](https://github.com/bbag)! - Ensures `<Tab>` component toggling is stable when smooth scrolling is enabled via custom CSS
+
+- [#2740](https://github.com/withastro/starlight/pull/2740) [`0e169c9`](https://github.com/withastro/starlight/commit/0e169c9fd9fbfc16d86225db6b00448edf39ffad) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Fixes an issue preventing Pagefind to be disabled using the `pagefind` frontmatter field.
+
+- [#2732](https://github.com/withastro/starlight/pull/2732) [`a10b466`](https://github.com/withastro/starlight/commit/a10b46680810882b029dd1d578cc86e22bc97af5) Thanks [@Sidnioulz](https://github.com/Sidnioulz)! - Adds Storybook, Confluence and Jira social icons
+
 ## 0.30.3
 
 ### Patch Changes
@@ -640,7 +702,7 @@
 
 - [#1837](https://github.com/withastro/starlight/pull/1837) [`a33a1223`](https://github.com/withastro/starlight/commit/a33a12231772c1dc4b7cc2db3477a6802f3ef53e) Thanks [@delucis](https://github.com/delucis)! - Adds three new icons: `comment`, `comment-alt`, `heart`
 
-- [#1842](https://github.com/withastro/starlight/pull/1842) [`c7838636`](https://github.com/withastro/starlight/commit/c7838636edb8d60a2422ce76a2db511b9cebbb70) Thanks [@delucis](https://github.com/delucis)! - Moves the `href` used in the site title link to Starlight’s route data object. This makes it possible for overrides to change the title link while reusing Starlight’s default component implemenation.
+- [#1842](https://github.com/withastro/starlight/pull/1842) [`c7838636`](https://github.com/withastro/starlight/commit/c7838636edb8d60a2422ce76a2db511b9cebbb70) Thanks [@delucis](https://github.com/delucis)! - Moves the `href` used in the site title link to Starlight’s route data object. This makes it possible for overrides to change the title link while reusing Starlight’s default component implementation.
 
 - [#1840](https://github.com/withastro/starlight/pull/1840) [`cb85563c`](https://github.com/withastro/starlight/commit/cb85563c9a3d4eb2925ad884e6a4e8698a15381b) Thanks [@MiahaCybersec](https://github.com/MiahaCybersec)! - Adds 1 new icon: `hackerone`
 
