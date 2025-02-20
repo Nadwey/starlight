@@ -1,6 +1,4 @@
 ---
-import type { Props } from '../props';
-
 import Head from 'virtual:starlight/components/Head';
 import ThemeProvider from 'virtual:starlight/components/ThemeProvider';
 
@@ -9,21 +7,23 @@ import 'virtual:starlight/user-css';
 
 import printHref from '../style/print.css?url&no-inline';
 
+const { starlightRoute } = Astro.locals;
+
 const htmlDataAttributes: DOMStringMap = { 'data-theme': 'dark' };
-if (Boolean(Astro.props.toc)) htmlDataAttributes['data-has-toc'] = '';
-if (Astro.props.hasSidebar) htmlDataAttributes['data-has-sidebar'] = '';
-if (Boolean(Astro.props.entry.data.hero)) htmlDataAttributes['data-has-hero'] = '';
+if (Boolean(starlightRoute.toc)) htmlDataAttributes['data-has-toc'] = '';
+if (starlightRoute.hasSidebar) htmlDataAttributes['data-has-sidebar'] = '';
+if (Boolean(starlightRoute.entry.data.hero)) htmlDataAttributes['data-has-hero'] = '';
 ---
 
 <html
-	lang={Astro.props.lang}
-	dir={Astro.props.dir}
+	lang={starlightRoute.lang}
+	dir={starlightRoute.dir}
 	{...htmlDataAttributes}
 >
 	<head>
-		<Head {...Astro.props} />
+		<Head />
 		<slot name="head" />
-		<ThemeProvider {...Astro.props} />
+		<ThemeProvider />
 		<link rel="stylesheet" href={printHref} media="print" />
 	</head>
 	<body><slot /></body>
